@@ -14,8 +14,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(value = "true")
 public class Book {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SLNO")
-	@SequenceGenerator(name="SLNO",sequenceName="SL_NO", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SLNO")
+	//@SequenceGenerator(name="SLNO",sequenceName="SL_NO", allocationSize=1)
 	private int id;
 	private String title;
 	private String author;
@@ -44,4 +45,5 @@ public class Book {
 		this.author = author;
 	}
 
+	
 }
