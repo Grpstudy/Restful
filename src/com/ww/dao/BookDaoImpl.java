@@ -20,7 +20,10 @@ public class BookDaoImpl {
 
 	public String getAutherById(int id) {
 		String author = null;
-		author = (String) hibernateTemplate.save(author);
+		Book book = ((Book) hibernateTemplate.get(Book.class,id));
+		if(book!=null){
+			author = book.getAuthor();
+		}
 		return author;
 
 	}
